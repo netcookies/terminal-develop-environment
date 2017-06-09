@@ -60,3 +60,4 @@ ln -s $HOME_PATH/.vim $HOME_PATH/.config/nvim
 
 vim +BundleInstall! +BundleClean +q
 
+echo "You need enter ~/.vim/bundle/YouCompleteMe and run install.py --all to complete install this vim plugin"
