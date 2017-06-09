@@ -44,7 +44,7 @@ configs/vim/install.sh
 # csscomb
 configs/csscomb/install.sh
 # sass-lint
-# cp ./configs/sass-lint/.sass-lint.yml ~/Projects
+# cp ./configs/sass-lint/sass-lint.yml ~/Projects/.sass-lint.yml
 
 ##########################
 #  Custom Configuration  #
