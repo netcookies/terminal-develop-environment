@@ -14,10 +14,12 @@ CMD=$0
 CUSTOM_PATH=${CMD%/*}
 
 timestamp() {
- date +"%Y-%m-%d %T"
+ date +"%Y-%m-%d"
 }
 
 BACKUP_PATH=$HOME_PATH/.configs_$(timestamp)
+
+mkdir -p $BACKUP_PATH
 
 #################
 #  Requirement  #
@@ -48,5 +50,4 @@ configs/csscomb/install.sh
 #  Custom Configuration  #
 ##########################
 
-mkdir -p $BACKUP_PATH
 

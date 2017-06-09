@@ -14,7 +14,7 @@ CMD=$0
 CUSTOM_PATH=${CMD%/*}
 
 timestamp() {
- date +"%Y-%m-%d %T"
+ date +"%Y-%m-%d"
 }
 
 BACKUP_PATH=$HOME_PATH/.configs_$(timestamp)
