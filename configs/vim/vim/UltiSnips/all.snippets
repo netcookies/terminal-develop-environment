@@ -1,0 +1,63 @@
+# This file contains snippets that are always defined. I personally
+# have snippets for signatures and often needed texts
+
+# sligthly lower priority than everything else since specialized versions
+# should overwrite. The user needs to adjust her priority in her snippets to
+# ~-55 so that other filetypes will still overwrite.
+priority -60
+
+##############
+# NICE BOXES #
+##############
+global !p
+from vimsnippets import foldmarker, make_box, get_comment_format
+endglobal
+
+snippet box2 "A nice box with the current comment symbol" b
+`!p
+box = make_box(len(t[1]) + 8)
+snip.rv = box[0]
+snip += box[1]
+`${1:${VISUAL:content}}`!p
+snip.rv = " - Start"``!p
+box = make_box(len(t[1]) + 8)
+snip.rv = box[2]
+snip += box[3]
+`
+$0
+`!p
+box = make_box(len(t[1]) + 6)
+snip.rv = box[0]
+snip += box[1]
+`$1`!p
+snip.rv = " - End"``!p
+box = make_box(len(t[1]) + 6)
+snip.rv = box[2]
+snip += box[3]`
+endsnippet
+
+snippet bbox2 "A nice box over the full width" b
+`!p
+if not snip.c:
+	width = int(vim.eval("&textwidth - (virtcol('.') == 1 ? 0 : virtcol('.'))")) or 71
+box = make_box(len(t[1]) + 8, width)
+snip.rv = box[0]
+snip += box[1]
+`${1:${VISUAL:content}}`!p
+snip.rv = " - Start"``!p
+box = make_box(len(t[1]) + 8, width)
+snip.rv = box[2]
+snip += box[3]`
+$0
+`!p
+box = make_box(len(t[1]) + 6, width)
+snip.rv = box[0]
+snip += box[1]
+`$1`!p
+snip.rv = " - End"``!p
+box = make_box(len(t[1]) + 6, width)
+snip.rv = box[2]
+snip += box[3]`
+endsnippet
+
+# vim:ft=snippets:

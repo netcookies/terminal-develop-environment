@@ -1,0 +1,40 @@
+# This file contains snippets that are always defined. I personally
+# have snippets for signatures and often needed texts
+
+# sligthly lower priority than everything else since specialized versions
+# should overwrite. The user needs to adjust her priority in her snippets to
+# ~-55 so that other filetypes will still overwrite.
+# priority -60
+priority -55
+
+##########################
+#  Some custom CSS snip  #
+##########################
+
+snippet cf "clearfix to float block" c
+content: " ";
+display: table;
+clear: both;
+$0
+endsnippet
+
+snippet fa "FontAwesome" f
+content: "";
+color: #fff;
+display: inline-block;
+font: normal normal normal 14px/1 FontAwesome;
+font-size: inherit;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+transform: translate(0, 0);
+endsnippet
+
+snippet vmid "verticle middle stuff" v
+content:"";
+display:inline-block;
+vertical-align:middle;
+height:100%;
+endsnippet
+
+# vim:ft=snippets:

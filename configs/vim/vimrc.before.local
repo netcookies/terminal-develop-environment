@@ -1,1 +1,2 @@
-/Users/Isulew/.vimrc.before.local
+let g:airline_powerline_fonts=1
+let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc',]
