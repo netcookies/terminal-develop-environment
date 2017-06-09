@@ -25,6 +25,8 @@ BACKUP_PATH=$HOME_PATH/.configs_$(timestamp)
 
 # https://github.com/neovim/neovim/wiki/Installing-Neovim
 brew install neovim/neovim/neovim
+brew uninstall vim
+brew uninstall macvim
 ln -s /usr/local/bin/nvim /usr/local/bin/vim
 # http://vim.spf13.com/
 curl http://j.mp/spf13-vim3 -L -o - | sh
@@ -44,6 +46,9 @@ mv $HOME_PATH/.vim/pythonx $BACKUP_PATH/.vim
 cp $CUSTOM_PATH/vimrc.local $HOME_PATH/.vimrc.local
 cp $CUSTOM_PATH/vimrc.before.local $HOME_PATH/.vimrc.before.local
 cp $CUSTOM_PATH/vimrc.bundles.local $HOME_PATH/.vimrc.bundles.local
+mkdir -p $HOME_PATH/.vim/UltiSnips
+mkdir -p $HOME_PATH/.vim/colors
+mkdir -p $HOME_PATH/.vim/pythonx
 cp -r $CUSTOM_PATH/UltiSnips $HOME_PATH/.vim/UltiSnips
 cp -r $CUSTOM_PATH/colors $HOME_PATH/.vim/colors
 cp -r $CUSTOM_PATH/pythonx $HOME_PATH/.vim/pythonx
