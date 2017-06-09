@@ -25,6 +25,8 @@ BACKUP_PATH=$HOME_PATH/.configs_$(timestamp)
 
 # https://github.com/neovim/neovim/wiki/Installing-Neovim
 brew install neovim/neovim/neovim
+pip2 install --user neovim
+pip3 install --user neovim
 brew uninstall vim
 brew uninstall macvim
 rm /usr/local/bin/vim
