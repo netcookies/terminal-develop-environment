@@ -124,16 +124,18 @@ let g:colorizer_auto_filetype='less,sass,scss,css,html'
 " }
 
 " FreeMarker {
-" insert the basic if tags (#if-#else)
-nnoremap <leader>fi :call FTLIf()<CR>
-" insert the basic list tags(#list-#else-/#list)
-nnoremap <leader>fl :call FTLList()<CR>
-" insert the new (since FreeMarker 2.3.23) list tags(#list-#items-/#items-#else-/#list)
-nnoremap <leader>fb :call FTLBigList()<CR>
-"  insert the switch tags(#switch, 3 #case and #break, #default, /#switch)
-nnoremap <leader>fs :call FTLSwitch()<CR>
-"  insert the assign tag and leave the cursor on insert mode
-nnoremap <leader>fa :call FTLAssign()<CR>
+if isdirectory(expand("~/.vim/bundle/vim-freemarker"))
+    " insert the basic if tags (#if-#else)
+    autocmd FileType ftl nnoremap <leader>fi :call FTLIf()<CR>
+    " insert the basic list tags(#list-#else-/#list)
+    autocmd FileType ftl nnoremap <leader>fl :call FTLList()<CR>
+    " insert the new (since FreeMarker 2.3.23) list tags(#list-#items-/#items-#else-/#list)
+    autocmd FileType ftl nnoremap <leader>fb :call FTLBigList()<CR>
+    "  insert the switch tags(#switch, 3 #case and #break, #default, /#switch)
+    autocmd FileType ftl nnoremap <leader>fs :call FTLSwitch()<CR>
+    "  insert the assign tag and leave the cursor on insert mode
+    autocmd FileType ftl nnoremap <leader>fa :call FTLAssign()<CR>
+endif
 " }
 
 " Custom keybindings {
