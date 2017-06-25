@@ -113,11 +113,10 @@ endif
 " }
 
 " HTML {
-au BufReadPost *.ftl set syntax=html
-au BufReadPost *.jade set syntax=html
-autocmd BufNewFile,BufRead *.jade set filetype=html
-autocmd FileType html set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
-autocmd BufWritePre,FileWritePre *.html,*.ftl silent! :%s/href=""/href="#"/g
+"au BufReadPost *.jade set syntax=html
+"autocmd BufNewFile,BufRead *.jade set filetype=html
+autocmd FileType html,ftl set tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab
+autocmd BufWritePre,FileWritePre *.html silent! :%s/href=""/href="#"/g
 " }
 "
 " CSS color preview {

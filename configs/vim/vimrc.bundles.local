@@ -22,3 +22,5 @@ Bundle 'tpope/vim-endwise'
 Bundle 'rstacruz/vim-node-import'
 Bundle 'rstacruz/vim-xtract'
 Bundle 'gcorne/vim-sass-lint'
+" FreeMarker
+Bundle 'andreshazard/vim-freemarker'
