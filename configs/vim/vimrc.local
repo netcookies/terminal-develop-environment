@@ -113,31 +113,16 @@ endif
 " }
 
 " HTML {
-"au BufReadPost *.jade set syntax=html
+"autocmd BufReadPost *.ftl set syntax=html
+autocmd BufNewFile,BufRead *.ftl set filetype=html
 "autocmd BufNewFile,BufRead *.jade set filetype=html
-au BufNewFile,BufRead *.ftl set filetype=html
 autocmd FileType html setlocal tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab
-autocmd FileType ftl  setlocal tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab
+"autocmd FileType ftl  setlocal tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab
 autocmd BufWritePre,FileWritePre *.html silent! :%s/href=""/href="#"/g
 " }
 
 " CSS color preview {
 let g:colorizer_auto_filetype='less,sass,scss,css,html'
-" }
-
-" FreeMarker {
-if isdirectory(expand("~/.vim/bundle/vim-freemarker"))
-    " insert the basic if tags (#if-#else)
-    nnoremap <leader>fi :call FTLIf()<CR>
-    " insert the basic list tags(#list-#else-/#list)
-    nnoremap <leader>fl :call FTLList()<CR>
-    " insert the new (since FreeMarker 2.3.23) list tags(#list-#items-/#items-#else-/#list)
-    nnoremap <leader>fb :call FTLBigList()<CR>
-    "  insert the switch tags(#switch, 3 #case and #break, #default, /#switch)
-    nnoremap <leader>fs :call FTLSwitch()<CR>
-    "  insert the assign tag and leave the cursor on insert mode
-    nnoremap <leader>fa :call FTLAssign()<CR>
-endif
 " }
 
 " Custom keybindings {
