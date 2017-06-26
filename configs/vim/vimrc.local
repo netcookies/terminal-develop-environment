@@ -115,7 +115,9 @@ endif
 " HTML {
 "au BufReadPost *.jade set syntax=html
 "autocmd BufNewFile,BufRead *.jade set filetype=html
-autocmd FileType html,ftl set tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab
+au BufNewFile,BufRead *.ftl set syntax=html
+autocmd FileType html setlocal tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab
+autocmd FileType ftl  setlocal tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab
 autocmd BufWritePre,FileWritePre *.html silent! :%s/href=""/href="#"/g
 " }
 
