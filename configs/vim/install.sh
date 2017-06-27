@@ -32,7 +32,7 @@ brew uninstall macvim
 rm /usr/local/bin/vim
 ln -s /usr/local/bin/nvim /usr/local/bin/vim
 # http://vim.spf13.com/
-curl http://j.mp/spf13-vim3 -L -o - | sh
+curl https://j.mp/spf13-vim3 -L -o - | sh
 rm -rf $HOME_PATH/.vim/init.vim
 ln -s $HOME_PATH/.vimrc $HOME_PATH/.vim/init.vim
 
@@ -54,9 +54,9 @@ patch $HOME_PATH/.vimrc.bundles $CUSTOM_PATH/vimrc.bundles.patch
 mkdir -p $HOME_PATH/.vim/UltiSnips
 mkdir -p $HOME_PATH/.vim/colors
 mkdir -p $HOME_PATH/.vim/pythonx
-cp -r $CUSTOM_PATH/UltiSnips $HOME_PATH/.vim/UltiSnips
-cp -r $CUSTOM_PATH/colors $HOME_PATH/.vim/colors
-cp -r $CUSTOM_PATH/pythonx $HOME_PATH/.vim/pythonx
+cp -r $CUSTOM_PATH/vim/UltiSnips $HOME_PATH/.vim/UltiSnips
+cp -r $CUSTOM_PATH/vim/colors $HOME_PATH/.vim/colors
+cp -r $CUSTOM_PATH/vim/pythonx $HOME_PATH/.vim/pythonx
 ln -s $HOME_PATH/.vim $HOME_PATH/.config/nvim
 
 vim +BundleInstall! +BundleClean +q
