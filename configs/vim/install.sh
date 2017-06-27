@@ -54,9 +54,9 @@ patch $HOME_PATH/.vimrc.bundles $CUSTOM_PATH/vimrc.bundles.patch
 mkdir -p $HOME_PATH/.vim/UltiSnips
 mkdir -p $HOME_PATH/.vim/colors
 mkdir -p $HOME_PATH/.vim/pythonx
-cp -r $CUSTOM_PATH/vim/UltiSnips $HOME_PATH/.vim/UltiSnips
-cp -r $CUSTOM_PATH/vim/colors $HOME_PATH/.vim/colors
-cp -r $CUSTOM_PATH/vim/pythonx $HOME_PATH/.vim/pythonx
+cp -r $CUSTOM_PATH/vim/UltiSnips $HOME_PATH/.vim
+cp -r $CUSTOM_PATH/vim/colors $HOME_PATH/.vim
+cp -r $CUSTOM_PATH/vim/pythonx $HOME_PATH/.vim
 ln -s $HOME_PATH/.vim $HOME_PATH/.config/nvim
 
 vim +BundleInstall! +BundleClean +q
