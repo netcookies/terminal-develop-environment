@@ -1,23 +1,29 @@
 " disable default bundle from SPF-13
 UnBundle 'amirh/HTML-AutoCloseTag'
-UnBundle 'jiangmiao/auto-pairs'
+"UnBundle 'jiangmiao/auto-pairs'
 UnBundle 'gorodinskiy/vim-coloresque'
 " CSS beautify
 Bundle 'netcookies/vim-csscomb'
 " AutoComplete
-"Bundle 'roxma/nvim-completion-manager'
-"Bundle 'SirVer/ultisnips'
-"Bundle 'honza/vim-snippets'
-Bundle 'rstacruz/vim-ultisnips-css'
+Bundle 'roxma/nvim-completion-manager'
+Bundle 'SirVer/ultisnips'
+Bundle 'netcookies/vim-snippets'
+"Bundle 'jsfaint/gen_tags.vim'
+Bundle 'Shougo/neco-syntax'
+Bundle 'Shougo/neoinclude.vim'
+"Bundle 'roxma/ncm-github'
+" Manager pip module
+Bundle 'roxma/python-support.nvim'
+"Bundle 'rstacruz/vim-ultisnips-css'
 " Fuzzy find
 Bundle 'junegunn/fzf'
 Bundle 'junegunn/fzf.vim'
 " Make web developing faster
 Bundle 'vim-scripts/HTML-AutoCloseTag'
 Bundle 'chrisbra/Colorizer'
-"Bundle 'rstacruz/vim-hyperstyle'
+Bundle 'rstacruz/vim-hyperstyle'
 Bundle 'roxma/nvim-cm-tern'
-Bundle 'rstacruz/vim-closer'
+"Bundle 'rstacruz/vim-closer'
 Bundle 'tpope/vim-endwise'
 Bundle 'rstacruz/vim-node-import'
 Bundle 'rstacruz/vim-xtract'

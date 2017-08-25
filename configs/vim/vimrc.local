@@ -64,6 +64,21 @@ if isdirectory(expand("~/.vim/bundle/fzf.vim"))
 endif
 " }
 
+" Python module management  {
+if isdirectory(expand("~/.vim/bundle/python-support.nvim"))
+    " disable python2 checking
+    let g:python_support_python2_require = 0
+    " for python completions
+    let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'jedi')
+    " language specific completions on markdown file
+    let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'mistune')
+
+    " utils, optional
+    let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'psutil')
+    let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'setproctitle')
+endif
+" }
+
 " YouCompleteMe {
 
 function! g:UltiSnips_Complete()
@@ -110,6 +125,29 @@ endif
         " Enable omni completion.
         autocmd FileType scss setlocal omnifunc=csscomplete#CompleteCSS
     endif
+" }
+
+" nvim-completion-manager {
+    if isdirectory(expand("~/.vim/bundle/nvim-completion-manager"))
+        " remap Ultisnips for compatibility for NCM
+        let g:UltiSnipsExpandTrigger           = "<tab>"
+        let g:UltiSnipsJumpForwardTrigger      = "<tab>"
+        let g:UltiSnipsJumpBackwardTrigger     = "<s-tab>"
+
+        au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+        au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsJumpBackwardTrigger . " <C-R>=g:UltiSnips_Reverse()<cr>"
+        "autocmd FileType scss setlocal omnifunc=csscomplete#CompleteCSS
+        inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+        inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+    endif
+" }
+
+" vim-snippets {
+    if isdirectory(expand("~/.vim/bundle/vim-snippets"))
+        let g:snips_author = "Isulew <netcookies@gmail.com>"
+        let g:snips_email = "netcookies@gmail.com"
+        let g:snips_github = "https://github.com/netcookies"
+endif
 " }
 
 " HTML {
