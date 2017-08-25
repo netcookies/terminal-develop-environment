@@ -23,18 +23,18 @@ BACKUP_PATH=$HOME_PATH/.configs_$(timestamp)
 #  Install vim  #
 #######################
 
-# https://github.com/neovim/neovim/wiki/Installing-Neovim
-brew install neovim/neovim/neovim
-pip2 install --user neovim
-pip3 install --user neovim
-brew uninstall vim
-brew uninstall macvim
-rm /usr/local/bin/vim
-ln -s /usr/local/bin/nvim /usr/local/bin/vim
-# http://vim.spf13.com/
-curl http://j.mp/spf13-vim3 -L -o - | sh
-rm -rf $HOME_PATH/.vim/init.vim
-ln -s $HOME_PATH/.vimrc $HOME_PATH/.vim/init.vim
+## https://github.com/neovim/neovim/wiki/Installing-Neovim
+#brew install neovim/neovim/neovim
+#pip2 install --user neovim
+#pip3 install --user neovim
+#brew uninstall vim
+#brew uninstall macvim
+#rm /usr/local/bin/vim
+#ln -s /usr/local/bin/nvim /usr/local/bin/vim
+## http://vim.spf13.com/
+#curl http://j.mp/spf13-vim3 -L -o - | sh
+#rm -rf $HOME_PATH/.vim/init.vim
+#ln -s $HOME_PATH/.vimrc $HOME_PATH/.vim/init.vim
 
 ##########################
 #  Custom Configuration  #
