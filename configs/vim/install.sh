@@ -64,7 +64,8 @@ mv $HOME_PATH/.vim/pythonx $BACKUP_PATH/.vim
 cp $CUSTOM_PATH/vimrc.local $HOME_PATH/.vimrc.local
 cp $CUSTOM_PATH/vimrc.before.local $HOME_PATH/.vimrc.before.local
 cp $CUSTOM_PATH/vimrc.bundles.local $HOME_PATH/.vimrc.bundles.local
-patch $HOME_PATH/.vimrc.bundles $CUSTOM_PATH/vimrc.bundles.patch
+patch -N $HOME_PATH/.vimrc.bundles $CUSTOM_PATH/vimrc.bundles.patch
+rm -f $HOME_PATH/.vimrc.bundles.rej
 mkdir -p $HOME_PATH/.vim/UltiSnips
 mkdir -p $HOME_PATH/.vim/colors
 mkdir -p $HOME_PATH/.vim/pythonx
