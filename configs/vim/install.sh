@@ -24,17 +24,31 @@ BACKUP_PATH=$HOME_PATH/.configs_$(timestamp)
 #######################
 
 # https://github.com/neovim/neovim/wiki/Installing-Neovim
-brew install neovim/neovim/neovim
-pip2 install --user neovim
-pip3 install --user neovim
-brew uninstall vim
-brew uninstall macvim
-rm /usr/local/bin/vim
-ln -s /usr/local/bin/nvim /usr/local/bin/vim
+command -v nvim > /dev/null 2>&1 || {
+    brew install neovim/neovim/neovim
+    pip2 install --user neovim
+    pip3 install --user neovim
+    brew uninstall vim
+    brew uninstall macvim
+}
+# if vim is an alias as nvim
+isAlias=`command -v vim | awk '{ print $1 }'`
+if [[ "$isAlias" != "alias" ]]; then
+    rm /usr/local/bin/vim
+    ln -s /usr/local/bin/nvim /usr/local/bin/vim
+fi
+# if spf13 vim installed
 # http://vim.spf13.com/
-curl https://j.mp/spf13-vim3 -L -o - | sh
-rm -rf $HOME_PATH/.vim/init.vim
-ln -s $HOME_PATH/.vimrc $HOME_PATH/.vim/init.vim
+isSpfvim=`[[ -f ~/.vimrc ]] && cat ~/.vimrc | grep -c "spf13.com"`
+if [[ "$isSpfvim" == "1" ]]; then
+    rm -rf $HOME_PATH/.vim/init.vim
+    ln -s $HOME_PATH/.vimrc $HOME_PATH/.vim/init.vim
+else
+    curl https://j.mp/spf13-vim3 -L -o - | sh
+    rm -rf $HOME_PATH/.vim/init.vim
+    ln -s $HOME_PATH/.vimrc $HOME_PATH/.vim/init.vim
+fi
+
 
 ##########################
 #  Custom Configuration  #
@@ -61,4 +75,5 @@ ln -s $HOME_PATH/.vim $HOME_PATH/.config/nvim
 
 vim +BundleInstall! +BundleClean +q
 
-echo "You need enter ~/.vim/bundle/YouCompleteMe and run install.py --all to complete install this vim plugin"
+# Use nvm-completion-manager instead of YouCompleteMe
+# echo "You need enter ~/.vim/bundle/YouCompleteMe and run install.py --all to complete install this vim plugin"
