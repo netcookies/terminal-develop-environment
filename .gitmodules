@@ -1,0 +1,3 @@
+[submodule "configs/iTerm2/.tmux"]
+	path = configs/iTerm2/.tmux
+	url = https://github.com/gpakosz/.tmux.git

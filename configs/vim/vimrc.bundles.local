@@ -2,28 +2,59 @@
 UnBundle 'amirh/HTML-AutoCloseTag'
 "UnBundle 'jiangmiao/auto-pairs'
 UnBundle 'gorodinskiy/vim-coloresque'
-" CSS beautify
+
+" CSS beautify {
 Bundle 'netcookies/vim-csscomb'
-" AutoComplete
-Bundle 'roxma/nvim-completion-manager'
+" }
+
+" AutoComplete {
+" ncm2 requires nvim-yarp
+Bundle 'ncm2/ncm2'
+Bundle 'roxma/nvim-yarp'
+Bundle 'ncm2/ncm2-match-highlight'
+Bundle 'ncm2/ncm2-ultisnips'
 Bundle 'SirVer/ultisnips'
 Bundle 'netcookies/vim-snippets'
-"Bundle 'jsfaint/gen_tags.vim'
+" some completion sources
+Bundle 'ncm2/ncm2-bufword'
+Bundle 'ncm2/ncm2-tmux'
+Bundle 'ncm2/ncm2-path'
+Bundle 'ncm2/ncm2-jedi'
+Bundle 'jsfaint/gen_tags.vim'
 Bundle 'Shougo/neco-syntax'
+Bundle 'ncm2/ncm2-syntax'
 Bundle 'Shougo/neoinclude.vim'
-"Bundle 'roxma/ncm-github'
-" Manager pip module
-Bundle 'roxma/python-support.nvim'
+Bundle 'ncm2/ncm2-neoinclude'
+Bundle 'ncm2/ncm2-github'
+" }
+
+
+" Manager pip module {
+"
+" Bundle 'roxma/python-support.nvim'
+" }
+
 "Bundle 'rstacruz/vim-ultisnips-css'
-" Fuzzy find
+" Fuzzy find {
 Bundle 'junegunn/fzf'
 Bundle 'junegunn/fzf.vim'
-" Make web developing faster
+" }
+
+" Make web developing faster {
 Bundle 'vim-scripts/HTML-AutoCloseTag'
 Bundle 'chrisbra/Colorizer'
-Bundle 'rstacruz/vim-hyperstyle'
-Bundle 'roxma/nvim-cm-tern'
+" Bundle 'rstacruz/vim-hyperstyle'
+Bundle 'ncm2/ncm2-tern',  {'do': 'npm install'}
+Bundle 'ncm2/ncm2-cssomni'
+Bundle 'ncm2/ncm2-html-subscope'
+Bundle 'ncm2/ncm2-markdown-subscope'
+" }
 "Bundle 'rstacruz/vim-closer'
 Bundle 'tpope/vim-endwise'
 Bundle 'rstacruz/vim-xtract'
 Bundle 'gcorne/vim-sass-lint'
+
+" Tmux {
+Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'benmills/vimux'
+" }

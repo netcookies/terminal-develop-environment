@@ -26,10 +26,11 @@ BACKUP_PATH=$HOME_PATH/.configs_$(timestamp)
 # https://github.com/neovim/neovim/wiki/Installing-Neovim
 command -v nvim > /dev/null 2>&1 || {
     brew install neovim/neovim/neovim
-    pip2 install --user neovim
-    pip3 install --user neovim
+    pip2 install --user --upgrade neovim
+    pip3 install --user --upgrade neovim
     brew uninstall vim
     brew uninstall macvim
+    yarn global add neovim
 }
 # if vim is an alias as nvim
 isAlias=`command -v vim | awk '{ print $1 }'`

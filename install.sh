@@ -41,6 +41,8 @@ configs/zsh/install.sh
 configs/etc/install.sh
 # vim
 configs/vim/install.sh
+# iTerm2
+configs/iTerm2/install.sh
 # csscomb
 configs/csscomb/install.sh
 # sass-lint
