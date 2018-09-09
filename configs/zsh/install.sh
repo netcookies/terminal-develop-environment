@@ -37,6 +37,8 @@ brew install fzf
 brew install zsh-syntax-highlighting
 # https://github.com/powerline/powerline
 pip install --user powerline-status
+# gnu bins
+brew install coreutils
 
 ##########################
 #  Custom Configuration  #
