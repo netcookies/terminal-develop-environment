@@ -306,5 +306,26 @@ fshow() {
 }
 
 #######################################################################
+#                       Restart docker-compose                        #
+#######################################################################
+
+dcr() {
+    if [ ! -z $1 ] ; then
+        docker-compose down -f $1 -v && docker-compose -f $1 up -d
+    else
+        docker-compose down -v && docker-compose up -d
+    fi
+}
+
+dcl() {
+    if [ ! -z $1 ] ; then
+        docker-compose logs -f $1
+    else
+        docker-compose logs -f
+    fi
+}
+
+
+#######################################################################
 #                       Useful Functions - End                        #
 #######################################################################
