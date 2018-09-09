@@ -24,6 +24,7 @@ BACKUP_PATH=$HOME_PATH/.configs_$(timestamp)
 #######################
 
 brew install tmux
+brew install reattach-to-user-namespace
 
 ##########################
 #  Custom Configuration  #
